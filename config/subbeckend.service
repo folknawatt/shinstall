@@ -1,0 +1,11 @@
+[Unit]
+Description=DataCraft backend-restarting service
+PartOf=datacraft.service
+After=datacraft.service
+After=backend.service
+[Service]
+User=root
+Group=root
+ExecStart=/bin/bash /var/www/dc-api/.script/start.sh
+[Install]
+WantedBy=datacraft.service
