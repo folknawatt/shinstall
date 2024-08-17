@@ -1,8 +1,6 @@
 alembic
 fastapi
 gunicorn
-sqlalchemy
-ray[default,serve]
 uvicorn[standard]
 python-multipart
 orjson
