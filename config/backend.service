@@ -1,23 +1,14 @@
 [Unit]
-#  specifies metadata and dependencies
 Description=Uvicorn instance to serve myproject
 After=network.target
-PartOf=data.service
-After=data.service
-# tells the init system to only start this after the networking target has been reached
-# We will give our regular user account ownership of the process since it owns all of the relevant files
 
 [Service]
-# Service specify the user and group under which our process will run.
-User=root
-# give group ownership to the www-data group so that Nginx can communicate easily with the Gunicorn processes.
+User=www-data
 Group=www-data
-# We'll then map out the working directory and set the PATH environmental variable so that the init system knows where our the executables for the process are located (within our virtual environment).
-WorkingDirectory=/var/www/shinstall
+WorkingDirectory=api-test
 Environment="PATH=/usr/local/python_test/bin"
-# We'll then specify the commanded to start the service
-ExecStart=/usr/local/python_test/bin/uvicorn main:app --host 127.0.0.1 --port 8080
-# This will tell systemd what to link this service to if we enable it to start at boot. We want this service to start when the regular multi-user system is up and running:
+ExecStart=/usr/local/python_test/bin/uvicorn --workers 3 -k uvicorn.workers.UvicornWorker --bind unix:shinstall/backend.sock -m 007 api-test.main:app
+
 
 [Install]
 WantedBy=data.service
