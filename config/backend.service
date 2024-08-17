@@ -5,9 +5,9 @@ After=network.target
 [Service]
 User=www-data
 Group=www-data
-WorkingDirectory=api-test
-Environment="PATH=/usr/local/python_test/bin"
-ExecStart=/usr/local/python_test/bin/uvicorn --workers 3 -k uvicorn.workers.UvicornWorker --bind unix:shinstall/backend.sock -m 007 api-test.main:app
+WorkingDirectory=shinstall/api-test
+Environment="PATH=shinstall/python_test/bin"
+ExecStart=shinstall/python_test/bin/uvicorn --workers 3 -k uvicorn.workers.UvicornWorker --bind unix:shinstall/backend.sock -m 007 api-test.main:app
 
 
 [Install]
