@@ -39,11 +39,9 @@ sudo systemctl enable backend.service
 sudo systemctl enable data.service
 sudo systemctl restart data.service
 
-
-
-# # Start service
-# sudo systemctl start backend.service
-# sudo systemctl start data.service
+# Start service
+sudo systemctl start backend.service
+sudo systemctl start data.service
 
 # # Check service status
 # sudo systemctl status backend.service
