@@ -3,11 +3,11 @@ Description=Uvicorn instance to serve myproject
 After=network.target
 
 [Service]
-User=www-data
-Group=www-data
+User=root
+Group=root
 WorkingDirectory=/home/ubuntu2/shinstall
 Environment="PATH=/home/ubuntu2/shinstall/python_test/bin"
-ExecStart=/home/ubuntu2/shinstall/python_test/bin/uvicorn --workers 3 --host 0.0.0.0 --port 8080 api-test.main:app
+ExecStart=/home/ubuntu2/shinstall/python_test/bin/uvicorn --workers 3 --host --bind 0.0.0.0:8080 main:app
 
 [Install]
 WantedBy=data.service
