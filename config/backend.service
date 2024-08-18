@@ -7,7 +7,7 @@ User=root
 Group=root
 WorkingDirectory=/home/ubuntu2/shinstall
 Environment="PATH=/home/ubuntu2/shinstall/python_test/bin"
-ExecStart=/home/ubuntu2/shinstall/python_test/bin/uvicorn --workers 3 --host --bind 0.0.0.0:8080 main:app
+ExecStart=/home/ubuntu2/shinstall/python_test/bin/gunicorn --workers 1 -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8080
 
 [Install]
 WantedBy=data.service
