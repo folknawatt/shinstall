@@ -7,7 +7,8 @@ sudo apt install python3 python3-pip -y
 sudo apt install python3-venv
 
 # Create a virtual environment
-rm -rf venv
+# rm -rf venv
+sudo chmod -R 777 /home/ubuntu2/shinstall
 python3 -m venv /home/ubuntu2/shinstall/python_test
 source /home/ubuntu2/shinstall/python_test/bin/activate
 python_dc/bin/python3 -m pip install -r /home/ubuntu2/shinstall/requirements/requirements.txt
