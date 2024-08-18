@@ -11,7 +11,7 @@ sudo apt install python3-venv
 
 python3 -m venv /urs/local/python_test
 source /urs/local/python_test/bin/activate
-/urs/local/python_test/bin/python3 -m pip install -r /home/ubuntu2/shinstall/requirements/requirements.txt
+python_test/bin/python3 -m pip install -r /home/ubuntu2/shinstall/requirements/requirements.txt
 
 # Copy .service files to systemd directory
 sudo rsync -r -az --delete -vt -v /home/ubuntu2/shinstall/config/backend.service /etc/systemd/system/
