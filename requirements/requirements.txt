@@ -1,4 +1,3 @@
-alembic
 fastapi
 gunicorn
 uvicorn[standard]
