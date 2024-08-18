@@ -5,11 +5,10 @@ sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update && sudo apt upgrade -y
 sudo apt install python3 python3-pip -y
 
-sudo apt install python3.10
 
 # Create a virtual environment
 rm -rf venv
-python3.10 -m venv /home/ubuntu2/shinstall/python_test
+python3 -m venv /home/ubuntu2/shinstall/python_test
 source /home/ubuntu2/shinstall/python_test/bin/activate
 python_dc/bin/python3 -m pip install -r /home/ubuntu2/shinstall/requirements/requirements.txt
 
