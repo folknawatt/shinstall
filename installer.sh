@@ -8,13 +8,14 @@ sudo apt install python3 python3-pip -y
 sudo apt install python3.10
 
 # Create a virtual environment
-python3.10 -m venv python_test
-source python_test/bin/activate
-python_dc/bin/python3 -m pip install -r /shinstall/requirements/requirements.txt
+rm -rf venv
+python3.10 -m venv /home/ubuntu2/shinstall/python_test
+source /home/ubuntu2/shinstall/python_test/bin/activate
+python_dc/bin/python3 -m pip install -r /home/ubuntu2/shinstall/requirements/requirements.txt
 
 # Copy .service files to systemd directory
-sudo rsync -r -az --delete -vt -v /shinstall/config/backend.service /etc/systemd/system/
-sudo rsync -r -az --delete -vt -v /shinstall/config/data.service /etc/systemd/system/
+sudo rsync -r -az --delete -vt -v /home/ubuntu2/shinstall/config/backend.service /etc/systemd/system/
+sudo rsync -r -az --delete -vt -v /home/ubuntu2/shinstall/config/data.service /etc/systemd/system/
 
 # Reload systemd
 sudo systemctl daemon-reload
