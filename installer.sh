@@ -9,8 +9,8 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install python3 python3-pip -y
 sudo apt install python3-venv
 
-python3 -m venv /urs/local/python_test
-source /urs/local/python_test/bin/activate
+python3 -m venv /home/ubuntu2/shinstall/python_test
+source /home/ubuntu2/shinstall/python_test/bin/activate
 python_test/bin/python3 -m pip install -r /home/ubuntu2/shinstall/requirements/requirements.txt
 
 # Copy .service files to systemd directory
