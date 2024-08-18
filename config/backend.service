@@ -7,7 +7,7 @@ User=www-data
 Group=www-data
 WorkingDirectory=/home/ubuntu2/shinstall
 Environment="PATH=/home/ubuntu2/shinstall/python_test/bin"
-ExecStart=/home/ubuntu2/shinstall/python_test/bin/uvicorn --workers 3 -k uvicorn.workers.UvicornWorker --bind unix:shinstall/backend.sock -m 007 api-test.main:app
+ExecStart=/home/ubuntu2/shinstall/python_test/bin/uvicorn --workers 3 --bind unix:/home/ubuntu2/shinstall/backend.sock api-test.main:app
 
 
 [Install]
